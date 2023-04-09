@@ -14,6 +14,7 @@
 		D17820B629E2D9E200C98487 /* CurrancyApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D17820B429E2D9E200C98487 /* CurrancyApp.xcdatamodeld */; };
 		D17820B829E2D9E800C98487 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17820B729E2D9E800C98487 /* Assets.xcassets */; };
 		D17820BB29E2D9E800C98487 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17820B929E2D9E800C98487 /* LaunchScreen.storyboard */; };
+		D17820C429E2DD5700C98487 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D17820C329E2DD5700C98487 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17820C429E2DD5700C98487 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = CurrancyApp;
+			packageProductDependencies = (
+				D17820C329E2DD5700C98487 /* SnapKit */,
+			);
 			productName = CurrancyApp;
 			productReference = D17820A829E2D9E200C98487 /* CurrancyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = D178209F29E2D9E200C98487;
+			packageReferences = (
+				D17820C229E2DD5700C98487 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D17820A929E2D9E200C98487 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D17820C229E2DD5700C98487 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D17820C329E2DD5700C98487 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D17820C229E2DD5700C98487 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D17820B429E2D9E200C98487 /* CurrancyApp.xcdatamodeld */ = {
