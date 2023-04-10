@@ -15,6 +15,17 @@
 		D17820C429E2DD5700C98487 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D17820C329E2DD5700C98487 /* SnapKit */; };
 		D17820C629E3EAE200C98487 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820C529E3EAE200C98487 /* TabBarViewController.swift */; };
 		D17820C829E3F30000C98487 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820C729E3F30000C98487 /* ProfileViewController.swift */; };
+		D17820CA29E3FEAD00C98487 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820C929E3FEAD00C98487 /* Model.swift */; };
+		D17820CC29E41F8700C98487 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820CB29E41F8700C98487 /* CollectionViewCell.swift */; };
+		D17820CE29E42F8500C98487 /* AgeCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820CD29E42F8500C98487 /* AgeCalculationViewController.swift */; };
+		D17820D029E4302B00C98487 /* CurrancyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820CF29E4302B00C98487 /* CurrancyVC.swift */; };
+		D17820D229E4306C00C98487 /* MassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820D129E4306C00C98487 /* MassVC.swift */; };
+		D17820D429E4308A00C98487 /* LengthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820D329E4308A00C98487 /* LengthVC.swift */; };
+		D17820D629E430A200C98487 /* TimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820D529E430A200C98487 /* TimeVC.swift */; };
+		D17820D829E430B900C98487 /* SpeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820D729E430B900C98487 /* SpeedVC.swift */; };
+		D17820DA29E430D100C98487 /* TemperatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820D929E430D100C98487 /* TemperatureVC.swift */; };
+		D17820DC29E430E200C98487 /* NumericalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820DB29E430E200C98487 /* NumericalVC.swift */; };
+		D17820DE29E430F100C98487 /* VolumeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820DD29E430F100C98487 /* VolumeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +38,17 @@
 		D17820BC29E2D9E800C98487 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D17820C529E3EAE200C98487 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D17820C729E3F30000C98487 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D17820C929E3FEAD00C98487 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D17820CB29E41F8700C98487 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D17820CD29E42F8500C98487 /* AgeCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeCalculationViewController.swift; sourceTree = "<group>"; };
+		D17820CF29E4302B00C98487 /* CurrancyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrancyVC.swift; sourceTree = "<group>"; };
+		D17820D129E4306C00C98487 /* MassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassVC.swift; sourceTree = "<group>"; };
+		D17820D329E4308A00C98487 /* LengthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthVC.swift; sourceTree = "<group>"; };
+		D17820D529E430A200C98487 /* TimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeVC.swift; sourceTree = "<group>"; };
+		D17820D729E430B900C98487 /* SpeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedVC.swift; sourceTree = "<group>"; };
+		D17820D929E430D100C98487 /* TemperatureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureVC.swift; sourceTree = "<group>"; };
+		D17820DB29E430E200C98487 /* NumericalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericalVC.swift; sourceTree = "<group>"; };
+		D17820DD29E430F100C98487 /* VolumeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +87,17 @@
 				D17820AF29E2D9E200C98487 /* ViewController.swift */,
 				D17820C529E3EAE200C98487 /* TabBarViewController.swift */,
 				D17820C729E3F30000C98487 /* ProfileViewController.swift */,
+				D17820C929E3FEAD00C98487 /* Model.swift */,
+				D17820CB29E41F8700C98487 /* CollectionViewCell.swift */,
+				D17820CD29E42F8500C98487 /* AgeCalculationViewController.swift */,
+				D17820CF29E4302B00C98487 /* CurrancyVC.swift */,
+				D17820D129E4306C00C98487 /* MassVC.swift */,
+				D17820D329E4308A00C98487 /* LengthVC.swift */,
+				D17820D529E430A200C98487 /* TimeVC.swift */,
+				D17820D729E430B900C98487 /* SpeedVC.swift */,
+				D17820D929E430D100C98487 /* TemperatureVC.swift */,
+				D17820DB29E430E200C98487 /* NumericalVC.swift */,
+				D17820DD29E430F100C98487 /* VolumeVC.swift */,
 				D17820B729E2D9E800C98487 /* Assets.xcassets */,
 				D17820BC29E2D9E800C98487 /* Info.plist */,
 				D17820B429E2D9E200C98487 /* CurrancyApp.xcdatamodeld */,
@@ -147,12 +180,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17820D429E4308A00C98487 /* LengthVC.swift in Sources */,
+				D17820DA29E430D100C98487 /* TemperatureVC.swift in Sources */,
+				D17820DE29E430F100C98487 /* VolumeVC.swift in Sources */,
+				D17820CA29E3FEAD00C98487 /* Model.swift in Sources */,
 				D17820C829E3F30000C98487 /* ProfileViewController.swift in Sources */,
+				D17820CE29E42F8500C98487 /* AgeCalculationViewController.swift in Sources */,
+				D17820DC29E430E200C98487 /* NumericalVC.swift in Sources */,
+				D17820D829E430B900C98487 /* SpeedVC.swift in Sources */,
+				D17820D229E4306C00C98487 /* MassVC.swift in Sources */,
+				D17820D629E430A200C98487 /* TimeVC.swift in Sources */,
+				D17820CC29E41F8700C98487 /* CollectionViewCell.swift in Sources */,
 				D17820B629E2D9E200C98487 /* CurrancyApp.xcdatamodeld in Sources */,
 				D17820B029E2D9E200C98487 /* ViewController.swift in Sources */,
 				D17820AC29E2D9E200C98487 /* AppDelegate.swift in Sources */,
 				D17820C629E3EAE200C98487 /* TabBarViewController.swift in Sources */,
 				D17820AE29E2D9E200C98487 /* SceneDelegate.swift in Sources */,
+				D17820D029E4302B00C98487 /* CurrancyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

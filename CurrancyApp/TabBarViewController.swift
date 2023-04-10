@@ -13,15 +13,14 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         tabBar.backgroundColor = .white
-        view.backgroundColor = .black
-        tabBar.tintColor = .black
+       // view.backgroundColor = .black
+        tabBar.unselectedItemTintColor = .darkGray
+        tabBar.tintColor = .systemBlue
         setupVCs()
+     
        
-        
     }
     
-
-   
     fileprivate func createNavController(for rootViewController: UIViewController,
                                                      title: String,
                                                      image: UIImage) -> UIViewController {
@@ -35,10 +34,8 @@ class TabBarViewController: UITabBarController {
     
     func setupVCs() {
            viewControllers = [
-               createNavController(for: ViewController(), title: NSLocalizedString("", comment: ""), image: UIImage(systemName: "magnifyingglass")!),
-               createNavController(for: ViewController(), title: NSLocalizedString("", comment: ""), image: UIImage.init(named: "currancy_icon")!),
-               createNavController(for: ProfileViewController(), title: NSLocalizedString("", comment: ""), image: UIImage(systemName: "person")!),
-             
+               createNavController(for: ViewController(), title: NSLocalizedString("Converter", comment: ""), image: UIImage.init(named: "converter_icon")!),
+               createNavController(for: ProfileViewController(), title: NSLocalizedString("Profile", comment: ""), image: UIImage.init(named: "profile_icon")!),
            ]
        }
 }
