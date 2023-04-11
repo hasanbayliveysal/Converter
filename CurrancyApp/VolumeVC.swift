@@ -18,9 +18,10 @@ class VolumeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-    
-        self.navigationItem.title = title_
+        view.backgroundColor  = .black
+        self.navigationItem.title = "Volume"
+        makeNumbers()
+        createCancelButton()
     }
     
 

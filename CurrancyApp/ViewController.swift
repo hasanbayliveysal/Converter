@@ -71,7 +71,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
 //        self.present(vc, animated: true)
         
         let vc = UINavigationController(rootViewController: myList[indexPath.item].vc)
-       // vc.modalPresentationStyle = .fullScreen // if you want to present it in full screen mode
+        vc.modalPresentationStyle = .fullScreen // if you want to present it in full screen mode
+        vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
         vc.navigationItem.title = myList[indexPath.item].title
         
