@@ -19,6 +19,7 @@ class TabBarViewController: UITabBarController {
         setupVCs()
      
        
+       
     }
     
     fileprivate func createNavController(for rootViewController: UIViewController,
@@ -35,7 +36,7 @@ class TabBarViewController: UITabBarController {
     func setupVCs() {
            viewControllers = [
                createNavController(for: ViewController(), title: NSLocalizedString("Converter", comment: ""), image: UIImage.init(named: "converter_icon")!),
-               createNavController(for: ProfileViewController(), title: NSLocalizedString("Profile", comment: ""), image: UIImage.init(named: "profile_icon")!),
+               createNavController(for: ProfileViewController(), title: NSLocalizedString("Calculator", comment: ""), image: UIImage.init(named: "profile_icon")!),
            ]
        }
 }

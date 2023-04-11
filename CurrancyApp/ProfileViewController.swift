@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .blue
+       
     }
     
 
