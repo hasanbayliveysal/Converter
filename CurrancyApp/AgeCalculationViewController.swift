@@ -46,7 +46,7 @@ extension UIViewController {
     @objc func makeNumbers () {
         let buttonSize : CGFloat = view.frame.size.width/4
         
-        let zeroButton = UIButton(frame: CGRect(x: buttonSize/8, y: view.frame.size.height - buttonSize, width: buttonSize * 1.9, height: buttonSize * 0.9))
+        let zeroButton = CustomButton(frame: CGRect(x: buttonSize/8, y: view.frame.size.height - buttonSize, width: buttonSize * 1.9, height: buttonSize * 0.9))
         zeroButton.backgroundColor = .darkGray
         zeroButton.setTitle("0", for: .normal)
         self.view.addSubview(zeroButton)
@@ -54,16 +54,17 @@ extension UIViewController {
         zeroButton.tag = 1
         zeroButton.addTarget(self, action: #selector(numberTapped), for: .touchUpInside)
         
-        let dotButton = UIButton(frame: CGRect(x: buttonSize * 2 + buttonSize/8, y: view.frame.size.height - buttonSize, width: buttonSize * 0.9, height: buttonSize * 0.9))
+        
+        let dotButton = CustomButton(frame: CGRect(x: buttonSize * 2 + buttonSize/8, y: view.frame.size.height - buttonSize, width: buttonSize * 0.9, height: buttonSize * 0.9))
         dotButton.backgroundColor = .darkGray
-        dotButton.setTitle(",", for: .normal)
+        dotButton.setTitle(".", for: .normal)
         dotButton.layer.cornerRadius = buttonSize*0.9/2
         self.view.addSubview(dotButton)
         dotButton.addTarget(self, action: #selector(dotBtnTapped), for: .touchUpInside)
         
         
         for x in 0..<3 {
-            let button1 = UIButton(frame: CGRect(x: buttonSize * CGFloat(x) + buttonSize / 8, y: view.frame.size.height - (buttonSize * 2), width: buttonSize * 0.9, height: buttonSize * 0.9))
+            let button1 = CustomButton(frame: CGRect(x: buttonSize * CGFloat(x) + buttonSize / 8, y: view.frame.size.height - (buttonSize * 2), width: buttonSize * 0.9, height: buttonSize * 0.9))
             button1.backgroundColor = .darkGray
             button1.setTitle("\(x+1)", for: .normal)
             button1.layer.cornerRadius = buttonSize*0.9/2
@@ -72,7 +73,7 @@ extension UIViewController {
             button1.addTarget(self, action: #selector(numberTapped), for: .touchUpInside)
         }
         for x in 0..<3 {
-            let button2 = UIButton(frame: CGRect(x: buttonSize * CGFloat(x) + buttonSize / 8 , y: view.frame.size.height - (buttonSize * 3), width: buttonSize * 0.9, height: buttonSize * 0.9))
+            let button2 = CustomButton(frame: CGRect(x: buttonSize * CGFloat(x) + buttonSize / 8 , y: view.frame.size.height - (buttonSize * 3), width: buttonSize * 0.9, height: buttonSize * 0.9))
             button2.backgroundColor = .darkGray
             button2.setTitle("\(x+4)", for: .normal)
             button2.layer.cornerRadius = buttonSize*0.9/2
@@ -81,7 +82,7 @@ extension UIViewController {
             button2.addTarget(self, action: #selector(numberTapped), for: .touchUpInside)
         }
         for x in 0..<3 {
-            let button3 = UIButton(frame: CGRect(x: buttonSize * CGFloat(x) + buttonSize / 8 , y: view.frame.size.height - (buttonSize * 4), width: buttonSize * 0.9, height: buttonSize * 0.9))
+            let button3 = CustomButton(frame: CGRect(x: buttonSize * CGFloat(x) + buttonSize / 8 , y: view.frame.size.height - (buttonSize * 4), width: buttonSize * 0.9, height: buttonSize * 0.9))
             button3.backgroundColor = .darkGray
             button3.setTitle("\(x+7)", for: .normal)
             button3.layer.cornerRadius = buttonSize*0.9/2
@@ -90,36 +91,42 @@ extension UIViewController {
             button3.addTarget(self, action: #selector(numberTapped), for: .touchUpInside)
         }
         
-        let deleteButton = UIButton(frame: CGRect(x: buttonSize * 3 + buttonSize / 8, y: view.frame.size.height - buttonSize * 2 , width: (buttonSize/2)*1.5, height: buttonSize * 1.9))
-        deleteButton.backgroundColor = .orange
-        deleteButton.setTitle("x", for: .normal)
-        deleteButton.layer.cornerRadius = (buttonSize/4)*1.5
-        self.view.addSubview(deleteButton)
+        let deleteBtn = CustomButton(frame: CGRect(x: buttonSize * 3 + buttonSize / 8, y: view.frame.size.height - buttonSize * 2 , width: (buttonSize/2)*1.5, height: buttonSize * 1.9))
+        deleteBtn.backgroundColor = .orange
+        deleteBtn.setTitle("⌫", for: .normal)
+        deleteBtn.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        deleteBtn.layer.cornerRadius = (buttonSize/4)*1.5
+        self.view.addSubview(deleteBtn)
+        deleteBtn.addTarget(self, action: #selector(deleteBtnTapped), for: .touchUpInside)
         
-        let clearAllButton = UIButton(frame: CGRect(x: buttonSize * 3 + buttonSize / 8, y: view.frame.size.height - buttonSize * 4, width: (buttonSize/2)*1.5 , height: buttonSize * 1.9))
+        let clearAllButton = CustomButton(frame: CGRect(x: buttonSize * 3 + buttonSize / 8, y: view.frame.size.height - buttonSize * 4, width: (buttonSize/2)*1.5 , height: buttonSize * 1.9))
         clearAllButton.backgroundColor = .orange
         clearAllButton.setTitle("AC", for: .normal)
         clearAllButton.layer.cornerRadius = (buttonSize/4)*1.5
         self.view.addSubview(clearAllButton)
         clearAllButton.addTarget(self, action: #selector(clearAllBtnTapped), for: .touchUpInside)
-       
+        
         
     }
     
-    @objc func numberTapped(_ sender: UIButton) {
+    @objc func numberTapped(_ sender: CustomButton) {
         
     }
     
-    @objc func clearAllBtnTapped(_ sender : UIButton) {
-       
+    @objc func clearAllBtnTapped(_ sender : CustomButton) {
+        
     }
     
-    @objc func dotBtnTapped(_ sender: UIButton) {
+    @objc func dotBtnTapped(_ sender: CustomButton) {
        // var isEnabled = sender.isEnabled
     }
     
+    @objc func deleteBtnTapped(_ sender: CustomButton) {
+       
+    }
     
-
+    
+    
     
 }
     

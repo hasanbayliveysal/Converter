@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D148026F29E69F9500EF72A7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D148026E29E69F9500EF72A7 /* CustomButton.swift */; };
+		D148027129E6DE3500EF72A7 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D148027029E6DE3500EF72A7 /* WebServices.swift */; };
+		D148027429E6DE5500EF72A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D148027329E6DE5500EF72A7 /* Alamofire */; };
 		D17820AC29E2D9E200C98487 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820AB29E2D9E200C98487 /* AppDelegate.swift */; };
 		D17820AE29E2D9E200C98487 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820AD29E2D9E200C98487 /* SceneDelegate.swift */; };
 		D17820B029E2D9E200C98487 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17820AF29E2D9E200C98487 /* ViewController.swift */; };
@@ -29,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D148026E29E69F9500EF72A7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		D148027029E6DE3500EF72A7 /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		D17820A829E2D9E200C98487 /* CurrancyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrancyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D17820AB29E2D9E200C98487 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D17820AD29E2D9E200C98487 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D17820C429E2DD5700C98487 /* SnapKit in Frameworks */,
+				D148027429E6DE5500EF72A7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +94,7 @@
 				D17820C529E3EAE200C98487 /* TabBarViewController.swift */,
 				D17820C729E3F30000C98487 /* ProfileViewController.swift */,
 				D17820C929E3FEAD00C98487 /* Model.swift */,
+				D148027029E6DE3500EF72A7 /* WebServices.swift */,
 				D17820CB29E41F8700C98487 /* CollectionViewCell.swift */,
 				D17820CF29E4302B00C98487 /* CurrancyVC.swift */,
 				D17820CD29E42F8500C98487 /* AgeCalculationViewController.swift */,
@@ -98,6 +105,7 @@
 				D17820D929E430D100C98487 /* TemperatureVC.swift */,
 				D17820DB29E430E200C98487 /* NumericalVC.swift */,
 				D17820DD29E430F100C98487 /* VolumeVC.swift */,
+				D148026E29E69F9500EF72A7 /* CustomButton.swift */,
 				D17820B729E2D9E800C98487 /* Assets.xcassets */,
 				D17820BC29E2D9E800C98487 /* Info.plist */,
 				D17820B429E2D9E200C98487 /* CurrancyApp.xcdatamodeld */,
@@ -123,6 +131,7 @@
 			name = CurrancyApp;
 			packageProductDependencies = (
 				D17820C329E2DD5700C98487 /* SnapKit */,
+				D148027329E6DE5500EF72A7 /* Alamofire */,
 			);
 			productName = CurrancyApp;
 			productReference = D17820A829E2D9E200C98487 /* CurrancyApp.app */;
@@ -154,6 +163,7 @@
 			mainGroup = D178209F29E2D9E200C98487;
 			packageReferences = (
 				D17820C229E2DD5700C98487 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D148027229E6DE5500EF72A7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = D17820A929E2D9E200C98487 /* Products */;
 			projectDirPath = "";
@@ -182,9 +192,11 @@
 			files = (
 				D17820D429E4308A00C98487 /* LengthVC.swift in Sources */,
 				D17820DA29E430D100C98487 /* TemperatureVC.swift in Sources */,
+				D148026F29E69F9500EF72A7 /* CustomButton.swift in Sources */,
 				D17820DE29E430F100C98487 /* VolumeVC.swift in Sources */,
 				D17820CA29E3FEAD00C98487 /* Model.swift in Sources */,
 				D17820C829E3F30000C98487 /* ProfileViewController.swift in Sources */,
+				D148027129E6DE3500EF72A7 /* WebServices.swift in Sources */,
 				D17820CE29E42F8500C98487 /* AgeCalculationViewController.swift in Sources */,
 				D17820DC29E430E200C98487 /* NumericalVC.swift in Sources */,
 				D17820D829E430B900C98487 /* SpeedVC.swift in Sources */,
@@ -397,6 +409,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D148027229E6DE5500EF72A7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		D17820C229E2DD5700C98487 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -408,6 +428,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D148027329E6DE5500EF72A7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D148027229E6DE5500EF72A7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		D17820C329E2DD5700C98487 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D17820C229E2DD5700C98487 /* XCRemoteSwiftPackageReference "SnapKit" */;
