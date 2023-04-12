@@ -14,36 +14,13 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     let request = WebServices()
     var input = "100"
     var base = "USD"
+    var keyboardHeight = Int()
     
-    private lazy var convertButton : CustomButton = {
-       let button = CustomButton()
-       self.view.addSubview(button)
-        button.addTarget(self, action: #selector(onTapConvert), for: .touchUpInside)
-       return button
-    }()
-    
-    private lazy var baseInput: UITextField = {
-        let label = UITextField()
-        self.view.addSubview(label)
-        label.placeholder = " write base here"
-        label.font = UIFont.systemFont(ofSize: 28, weight: .regular)
-        label.clipsToBounds = true
-        label.backgroundColor = .systemGray
-        label.layer.cornerRadius = 8
-        return label
-    }()
-    
-    private lazy var amountInput: UITextField = {
-        let label = UITextField()
-        self.view.addSubview(label)
-        label.placeholder = " write amount here"
-        label.keyboardType = .numberPad
-        label.font = UIFont.systemFont(ofSize: 28, weight: .regular)
-        label.clipsToBounds = true
-        label.backgroundColor = .systemGray
-        label.layer.cornerRadius = 8
-        return label
-    }()
+  
+    let amountLabel = UITextField()
+    let baseLabel = UITextField()
+    let button = CustomButton()
+   
     
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
@@ -69,14 +46,40 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         self.tableView.dataSource = self
         makeRequest(showAll: true)
         makeConstrate()
+        
+     
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+//
+//    @objc func onTapInput() {
+//        print("shjkfasjdhfga")
+//        createView().snp.makeConstraints { make in
+//            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-keyboardHeight)
+//        }
+//    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRecangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRecangle.height
+            self.keyboardHeight = Int(keyboardHeight)
+            print(keyboardHeight)
+          //  whiteView.removeFromSuperview()
+            whiteView.snp.makeConstraints { make in
+                make.bottom.equalTo(self.view.snp.bottom).offset(-keyboardHeight)
+                make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
+                make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right)
+                make.height.equalTo(self.view.frame.size.height/4)
+          }
+        }
     }
   
     
     func makeRequest(showAll : Bool, currencies: [String] = ["USD", "GBP", "EUR"]) {
         request.apiRequest(url: "https://api.exchangerate.host/latest?base=\(base)&amount=\(input)") { currency in
             var tempList = [String]()
-
-            var date = currency.date
+            let date = currency.date
             for currency in currency.rates {
                 if showAll {
                     tempList.append("\(currency.key) \(String(format: "%0.2f", currency.value))")
@@ -87,6 +90,8 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
             self.currencyList = tempList
             self.tableView.reloadData()
             self.dateLabel.text = date
+            print(self.currencyList.count)
+           // print(date)
         }
     }
     
@@ -105,10 +110,14 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
     @objc func onTapConvert(_ sender: CustomButton) {
         sender.animation(sender, .blue)
-        self.base = baseInput.text!
-        self.input = amountInput.text!
+        self.base = baseLabel.text!
+        self.input = amountLabel.text!
         makeRequest(showAll: true)
         tableView.reloadData()
+        whiteView.removeFromSuperview()
+        self.view.addSubview(whiteView)
+        makeConstrate()
+        view.endEditing(true)
     }
     
     func makeConstrate() {
@@ -119,28 +128,65 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         tableView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(dateLabel.snp.bottom)
-            make.bottom.equalTo(self.amountInput.snp.top).offset(-16)
+            make.bottom.equalTo(self.view.snp.bottom).offset(-view.frame.size.height/4)
         }
-        baseInput.snp.makeConstraints { make in
-            make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(16)
-            make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right).offset(-16)
-            make.bottom.equalTo(self.convertButton.safeAreaLayoutGuide.snp.top).offset(-16)
-            make.width.equalTo(self.view.frame.size.width)
-            make.height.equalTo(40)
-        }
-        amountInput.snp.makeConstraints { make in
-            make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(16)
-            make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right).offset(-16)
-            make.bottom.equalTo(self.baseInput.safeAreaLayoutGuide.snp.top).offset(-16)
-            make.width.equalTo(self.view.frame.size.width)
-            make.height.equalTo(40)
-        }
-        convertButton.snp.makeConstraints { make in
-            make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left).offset(16)
-            make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right).offset(-16)
+        whiteView.snp.makeConstraints { make in
+            make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
+            make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-            make.width.equalTo(self.view.frame.size.width)
-            make.height.equalTo(60)
+            make.height.equalTo(self.view.frame.size.height/4)
         }
     }
+    
+    
+    
+    
+    private lazy var whiteView: UIView = {
+        let view = UIView()
+        self.view.addSubview(view)
+        view.backgroundColor = .white
+       // view.isUserInteractionEnabled = true
+        
+        view.addSubview(amountLabel)
+        amountLabel.placeholder = " write amount here"
+        amountLabel.font = UIFont.systemFont(ofSize: 28, weight: .regular)
+        amountLabel.clipsToBounds = true
+        amountLabel.backgroundColor = .systemGray
+        amountLabel.layer.cornerRadius = 8
+        amountLabel.isUserInteractionEnabled = true
+        amountLabel.keyboardType = .numberPad
+       // amountLabel.addTarget(self, action: #selector(onTapInput), for: .touchUpInside)
+        
+        view.addSubview(baseLabel)
+        baseLabel.placeholder = " write base here"
+        baseLabel.font = UIFont.systemFont(ofSize: 28, weight: .regular)
+        baseLabel.clipsToBounds = true
+        baseLabel.backgroundColor = .systemGray
+        baseLabel.layer.cornerRadius = 8
+        
+       
+        view.addSubview(button)
+        button.addTarget(self, action: #selector(onTapConvert), for: .touchUpInside)
+       
+        amountLabel.snp.makeConstraints { make in
+            make.left.equalTo(view.snp.left).offset(16)
+            make.right.equalTo(view.snp.right).offset(-16)
+            make.bottom.equalTo(baseLabel.snp.top).offset(-self.view.frame.size.height/45)
+        }
+        
+        baseLabel.snp.makeConstraints { make in
+            make.left.equalTo(view.snp.left).offset(16)
+            make.right.equalTo(view.snp.right).offset(-16)
+            make.bottom.equalTo(button.snp.top).offset(-self.view.frame.size.height/45)
+        }
+        
+        button.snp.makeConstraints { make in
+            make.left.equalTo(view.snp.left).offset(16)
+            make.right.equalTo(view.snp.right).offset(-16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-self.view.frame.size.height/45)
+            make.height.equalTo(self.view.frame.size.height/16)
+        }
+        
+        return view
+    }()
 }
