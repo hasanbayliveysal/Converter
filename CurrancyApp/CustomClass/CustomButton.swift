@@ -26,7 +26,7 @@ class CustomButton: UIButton {
     
     func styleButton() {
         
-        setTitle("Buttom", for: .normal)
+        setTitle("Button", for: .normal)
         setTitleColor(.white, for: .normal)
         
         backgroundColor    = .blue

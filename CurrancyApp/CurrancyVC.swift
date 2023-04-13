@@ -45,27 +45,18 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         self.tableView.delegate = self
         self.tableView.dataSource = self
         makeRequest(showAll: true)
-        makeConstrate()
-        
-     
+        makeConstraint()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
-//
-//    @objc func onTapInput() {
-//        print("shjkfasjdhfga")
-//        createView().snp.makeConstraints { make in
-//            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-keyboardHeight)
-//        }
-//    }
     
     @objc func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRecangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRecangle.height
             self.keyboardHeight = Int(keyboardHeight)
-            print(keyboardHeight)
-          //  whiteView.removeFromSuperview()
+           // print(keyboardHeight)
+
             whiteView.snp.makeConstraints { make in
                 make.bottom.equalTo(self.view.snp.bottom).offset(-keyboardHeight)
                 make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
@@ -90,8 +81,7 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
             self.currencyList = tempList
             self.tableView.reloadData()
             self.dateLabel.text = date
-            print(self.currencyList.count)
-           // print(date)
+         
         }
     }
     
@@ -116,11 +106,11 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         tableView.reloadData()
         whiteView.removeFromSuperview()
         self.view.addSubview(whiteView)
-        makeConstrate()
+        makeConstraint()
         view.endEditing(true)
     }
     
-    func makeConstrate() {
+    func makeConstraint() {
         dateLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
@@ -145,7 +135,6 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         let view = UIView()
         self.view.addSubview(view)
         view.backgroundColor = .white
-       // view.isUserInteractionEnabled = true
         
         view.addSubview(amountLabel)
         amountLabel.placeholder = " write amount here"
@@ -155,8 +144,7 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         amountLabel.layer.cornerRadius = 8
         amountLabel.isUserInteractionEnabled = true
         amountLabel.keyboardType = .numberPad
-       // amountLabel.addTarget(self, action: #selector(onTapInput), for: .touchUpInside)
-        
+       
         view.addSubview(baseLabel)
         baseLabel.placeholder = " write base here"
         baseLabel.font = UIFont.systemFont(ofSize: 28, weight: .regular)
@@ -167,6 +155,8 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
        
         view.addSubview(button)
         button.addTarget(self, action: #selector(onTapConvert), for: .touchUpInside)
+        button.setTitle("Convert", for: .normal)
+        
        
         amountLabel.snp.makeConstraints { make in
             make.left.equalTo(view.snp.left).offset(16)
