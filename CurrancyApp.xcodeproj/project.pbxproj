@@ -91,12 +91,12 @@
 		D17820AA29E2D9E200C98487 /* CurrancyApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1C7D8B029E83DE90007C572 /* ViewControllers */,
+				D1C7D8AD29E83DBC0007C572 /* Model */,
+				D1C7D8AC29E83D870007C572 /* WebService */,
 				D1C7D8AB29E81C6D0007C572 /* CustomCell */,
-				D1C7D8AA29E81C5D0007C572 /* WebServices */,
 				D1C7D8A929E81C4C0007C572 /* CustomClass */,
-				D1C7D8A829E81C440007C572 /* Model */,
 				D1C7D8A729E81C370007C572 /* Delegates */,
-				D1C7D8A629E81C240007C572 /* VC */,
 				D17820B729E2D9E800C98487 /* Assets.xcassets */,
 				D17820BC29E2D9E800C98487 /* Info.plist */,
 				D17820B429E2D9E200C98487 /* CurrancyApp.xcdatamodeld */,
@@ -104,7 +104,48 @@
 			path = CurrancyApp;
 			sourceTree = "<group>";
 		};
-		D1C7D8A629E81C240007C572 /* VC */ = {
+		D1C7D8A729E81C370007C572 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D17820AB29E2D9E200C98487 /* AppDelegate.swift */,
+				D17820AD29E2D9E200C98487 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		D1C7D8A929E81C4C0007C572 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				D148026E29E69F9500EF72A7 /* CustomButton.swift */,
+			);
+			path = CustomClass;
+			sourceTree = "<group>";
+		};
+		D1C7D8AB29E81C6D0007C572 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				D17820CB29E41F8700C98487 /* CollectionViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		D1C7D8AC29E83D870007C572 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				D148027029E6DE3500EF72A7 /* WebServices.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		D1C7D8AD29E83DBC0007C572 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D17820C929E3FEAD00C98487 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1C7D8B029E83DE90007C572 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				D17820CF29E4302B00C98487 /* CurrancyVC.swift */,
@@ -120,48 +161,7 @@
 				D17820C529E3EAE200C98487 /* TabBarViewController.swift */,
 				D17820C729E3F30000C98487 /* ProfileViewController.swift */,
 			);
-			name = VC;
-			sourceTree = "<group>";
-		};
-		D1C7D8A729E81C370007C572 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				D17820AB29E2D9E200C98487 /* AppDelegate.swift */,
-				D17820AD29E2D9E200C98487 /* SceneDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
-		D1C7D8A829E81C440007C572 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D17820C929E3FEAD00C98487 /* Model.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		D1C7D8A929E81C4C0007C572 /* CustomClass */ = {
-			isa = PBXGroup;
-			children = (
-				D148026E29E69F9500EF72A7 /* CustomButton.swift */,
-			);
-			path = CustomClass;
-			sourceTree = "<group>";
-		};
-		D1C7D8AA29E81C5D0007C572 /* WebServices */ = {
-			isa = PBXGroup;
-			children = (
-				D148027029E6DE3500EF72A7 /* WebServices.swift */,
-			);
-			name = WebServices;
-			sourceTree = "<group>";
-		};
-		D1C7D8AB29E81C6D0007C572 /* CustomCell */ = {
-			isa = PBXGroup;
-			children = (
-				D17820CB29E41F8700C98487 /* CollectionViewCell.swift */,
-			);
-			path = CustomCell;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
