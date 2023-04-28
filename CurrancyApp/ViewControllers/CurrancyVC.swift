@@ -12,8 +12,8 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
     var currencyList = [String]()
     let request = WebServices()
-    var input = "100"
-    var base = "USD"
+    var input = "1"
+    var base = "EUR"
     var keyboardHeight = Int()
     
   
@@ -38,12 +38,16 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     }()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         view.backgroundColor = .black
         createCancelButton()
         self.navigationItem.title = "Currancy"
         self.tableView.delegate = self
         self.tableView.dataSource = self
+       
+        self.amountLabel.textAlignment = .center
+        self.baseLabel.textAlignment = .center
         makeRequest(showAll: true)
         makeConstraint()
         
@@ -68,7 +72,7 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
   
     
     func makeRequest(showAll : Bool, currencies: [String] = ["USD", "GBP", "EUR"]) {
-        request.apiRequest(url: "https://api.exchangerate.host/latest?base=\(base)&amount=\(input)") { currency in
+        request.apiRequest(url: "https://api.exchangerate.host/latest?base=\(base)&amount=\(input)"){ currency in
             var tempList = [String]()
             let date = currency.date
             for currency in currency.rates {
@@ -81,6 +85,7 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
             self.currencyList = tempList
             self.tableView.reloadData()
             self.dateLabel.text = date
+            print(date)
          
         }
     }
@@ -99,7 +104,7 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     }
     
     @objc func onTapConvert(_ sender: CustomButton) {
-        sender.animation(sender, .blue)
+        sender.animation(sender, .orange)
         self.base = baseLabel.text!
         self.input = amountLabel.text!
         makeRequest(showAll: true)
@@ -108,6 +113,7 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         self.view.addSubview(whiteView)
         makeConstraint()
         view.endEditing(true)
+       
     }
     
     func makeConstraint() {
@@ -124,7 +130,7 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
             make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
             make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-            make.height.equalTo(self.view.frame.size.height/4)
+            make.height.equalTo(self.view.frame.size.height/5)
         }
     }
     
@@ -134,40 +140,55 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     private lazy var whiteView: UIView = {
         let view = UIView()
         self.view.addSubview(view)
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         
         view.addSubview(amountLabel)
-        amountLabel.placeholder = " write amount here"
+        amountLabel.backgroundColor = .white
+        amountLabel.layer.borderColor = UIColor.orange.cgColor
+        amountLabel.layer.borderWidth = 2
+        amountLabel.attributedPlaceholder = NSAttributedString(string: "Amount", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        )
         amountLabel.font = UIFont.systemFont(ofSize: 28, weight: .regular)
         amountLabel.clipsToBounds = true
-        amountLabel.backgroundColor = .systemGray
-        amountLabel.layer.cornerRadius = 8
+        amountLabel.textColor = .black
+        amountLabel.layer.cornerRadius = 25
         amountLabel.isUserInteractionEnabled = true
         amountLabel.keyboardType = .numberPad
        
+        
         view.addSubview(baseLabel)
-        baseLabel.placeholder = " write base here"
+        baseLabel.attributedPlaceholder = NSAttributedString(string: "Base", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        )
+        baseLabel.textColor = .black
+        baseLabel.backgroundColor = .white
+        baseLabel.layer.borderColor = UIColor.orange.cgColor
+        baseLabel.layer.borderWidth = 2
         baseLabel.font = UIFont.systemFont(ofSize: 28, weight: .regular)
         baseLabel.clipsToBounds = true
-        baseLabel.backgroundColor = .systemGray
-        baseLabel.layer.cornerRadius = 8
+        baseLabel.layer.cornerRadius = 25
         
        
         view.addSubview(button)
         button.addTarget(self, action: #selector(onTapConvert), for: .touchUpInside)
         button.setTitle("Convert", for: .normal)
+        button.backgroundColor = .orange
+        
         
        
         amountLabel.snp.makeConstraints { make in
             make.left.equalTo(view.snp.left).offset(16)
-            make.right.equalTo(view.snp.right).offset(-16)
-            make.bottom.equalTo(baseLabel.snp.top).offset(-self.view.frame.size.height/45)
+            make.right.equalTo(baseLabel.snp.left).offset(-16)
+            make.bottom.equalTo(button.snp.top).offset(-self.view.frame.size.height/45)
+            make.width.equalTo(self.view.frame.size.width*0.43)
+            make.height.equalTo(50)
         }
         
         baseLabel.snp.makeConstraints { make in
-            make.left.equalTo(view.snp.left).offset(16)
+            make.left.equalTo(amountLabel.snp.right).offset(16)
             make.right.equalTo(view.snp.right).offset(-16)
             make.bottom.equalTo(button.snp.top).offset(-self.view.frame.size.height/45)
+            make.width.equalTo(self.view.frame.size.width*0.43)
+            make.height.equalTo(50)
         }
         
         button.snp.makeConstraints { make in

@@ -16,8 +16,8 @@ class WebServices {
         Session.default.request(url).responseDecodable(of: CurrancyModel.self) { response in
         switch response.result {
             case .success(let currencies):
-              //   print(currencies)
                  completion(currencies)
+            print(currencies.date)
             case .failure(let error):
                 print(error)
                 
