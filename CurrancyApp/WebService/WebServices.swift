@@ -13,13 +13,15 @@ class WebServices {
     
     func apiRequest(url: String, completion: @escaping (CurrancyModel) -> () ) {
         
+        
         Session.default.request(url).responseDecodable(of: CurrancyModel.self) { response in
+            
         switch response.result {
             case .success(let currencies):
                  completion(currencies)
-            print(currencies.date)
+                 print(currencies.date)
             case .failure(let error):
-                print(error)
+                 print(error)
                 
             }
             

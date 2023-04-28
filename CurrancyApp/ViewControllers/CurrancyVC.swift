@@ -12,8 +12,8 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
     var currencyList = [String]()
     let request = WebServices()
-    var input = "1"
-    var base = "EUR"
+    var input = ""
+    var base = ""
     var keyboardHeight = Int()
     
   
@@ -49,6 +49,7 @@ class CurrancyVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         self.amountLabel.textAlignment = .center
         self.baseLabel.textAlignment = .center
         makeRequest(showAll: true)
+        tableView.reloadData()
         makeConstraint()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
