@@ -429,7 +429,6 @@ class AgeCalculationViewController: UIViewController {
     
     func daysBetween(start: Date, end: Date) -> DateComponents {
         let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: start, to: end)
-        print(dateComponents.month)
         return dateComponents
        }
     

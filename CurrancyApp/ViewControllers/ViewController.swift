@@ -27,10 +27,11 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 15, bottom: 10, right: 15)
-                //layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: view.frame.size.width/10, bottom: 10, right: view.frame.size.width/10)
+       // layout.itemSize = CGSize(width: self.view.frame.size.width/10, height: self.view.frame.size.width/10)
         layout.minimumInteritemSpacing = 1
         layout.minimumLineSpacing = 30
+      
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -51,10 +52,13 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         }
     }
 
+    
+   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myList.count
     }
     
+ 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.data = myList[indexPath.item]
@@ -62,7 +66,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath ) -> CGSize {
-        return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.width/4)
+        return CGSize(width: collectionView.frame.width/5, height: collectionView.frame.width/5)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

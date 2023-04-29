@@ -36,7 +36,7 @@
 		D148026E29E69F9500EF72A7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		D148027029E6DE3500EF72A7 /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		D148027529E718DD00EF72A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D17820A829E2D9E200C98487 /* CurrancyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrancyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D17820A829E2D9E200C98487 /* Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D17820AB29E2D9E200C98487 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D17820AD29E2D9E200C98487 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D17820AF29E2D9E200C98487 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		D17820A929E2D9E200C98487 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D17820A829E2D9E200C98487 /* CurrancyApp.app */,
+				D17820A829E2D9E200C98487 /* Converter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,9 +167,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D17820A729E2D9E200C98487 /* CurrancyApp */ = {
+		D17820A729E2D9E200C98487 /* Converter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D17820BF29E2D9E800C98487 /* Build configuration list for PBXNativeTarget "CurrancyApp" */;
+			buildConfigurationList = D17820BF29E2D9E800C98487 /* Build configuration list for PBXNativeTarget "Converter" */;
 			buildPhases = (
 				D17820A429E2D9E200C98487 /* Sources */,
 				D17820A529E2D9E200C98487 /* Frameworks */,
@@ -179,13 +179,13 @@
 			);
 			dependencies = (
 			);
-			name = CurrancyApp;
+			name = Converter;
 			packageProductDependencies = (
 				D17820C329E2DD5700C98487 /* SnapKit */,
 				D148027329E6DE5500EF72A7 /* Alamofire */,
 			);
 			productName = CurrancyApp;
-			productReference = D17820A829E2D9E200C98487 /* CurrancyApp.app */;
+			productReference = D17820A829E2D9E200C98487 /* Converter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D17820A329E2D9E200C98487 /* Build configuration list for PBXProject "CurrancyApp" */;
+			buildConfigurationList = D17820A329E2D9E200C98487 /* Build configuration list for PBXProject "Converter" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,7 +220,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D17820A729E2D9E200C98487 /* CurrancyApp */,
+				D17820A729E2D9E200C98487 /* Converter */,
 			);
 		};
 /* End PBXProject section */
@@ -440,7 +440,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D17820A329E2D9E200C98487 /* Build configuration list for PBXProject "CurrancyApp" */ = {
+		D17820A329E2D9E200C98487 /* Build configuration list for PBXProject "Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D17820BD29E2D9E800C98487 /* Debug */,
@@ -449,7 +449,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D17820BF29E2D9E800C98487 /* Build configuration list for PBXNativeTarget "CurrancyApp" */ = {
+		D17820BF29E2D9E800C98487 /* Build configuration list for PBXNativeTarget "Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D17820C029E2D9E800C98487 /* Debug */,

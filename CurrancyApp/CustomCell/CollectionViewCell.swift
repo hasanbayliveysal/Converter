@@ -29,7 +29,10 @@ class CollectionViewCell: UICollectionViewCell {
         
         let icon = UIImageView()
         contentView.addSubview(icon)
-        
+        icon.backgroundColor = UIColor(white: 1, alpha: 0.15)
+        icon.clipsToBounds = true
+        icon.layer.cornerRadius = 10
+        icon.tintColor = .orange
         return icon
         
     }()
@@ -43,7 +46,7 @@ class CollectionViewCell: UICollectionViewCell {
         }
         icon.snp.makeConstraints { make in
             make.left.right.bottom.top.equalToSuperview()
-         
+           // make.height.width.equalTo(20)
         }
     }
     
